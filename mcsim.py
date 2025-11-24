@@ -1,3 +1,4 @@
+#%%
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -54,7 +55,7 @@ print(f"5th Percentile: ${p5:,.0f}")
 print(f"95th Percentile: ${p95:,.0f}")
 print(f"Probability Affordable (≤ ${budget_threshold:,.0f}): {prob_feasible:.2%}")
 print(f"Probability Self-Funded (≤ $0): {prob_self_funded:.2%}")
-
+#%%
 # Graphed Results
 plt.figure(figsize=(8,5))
 plt.hist(gross_city_cost, bins=50, color='green')
@@ -63,4 +64,6 @@ plt.ylabel("Frequency")
 plt.title("Monte Carlo Distribution of Gross Annual Cost")
 plt.axvline(x=2_000_000_000, color='red')
 plt.tight_layout()
+plt.savefig("gross_annual_city_cost_distribution.png")
 plt.show()
+# %%
