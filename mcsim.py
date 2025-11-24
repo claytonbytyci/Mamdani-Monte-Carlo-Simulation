@@ -3,12 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import os
-for dirname, _, filenames in os.walk('/kaggle/input'):
-    for filename in filenames:
-        print(os.path.join(dirname, filename))
-
-np.random.seed(42)
+# np.random.seed(42)
 
 # Model Parameters (based on reported claims on policy costs)
 grocery_mean = 60_000_000
@@ -33,7 +28,7 @@ landlord_std = 500_000_000
 budget_threshold = 2_000_000_000
 
 #Run Monte Carlo Trials
-N = 200000
+N = 1000000
 grocery = np.random.normal(grocery_mean, grocery_std, N)
 bus = np.random.normal(free_bus_mean, free_bus_std, N)
 rent = np.random.normal(rent_freeze_mean, rent_freeze_std, N)
